@@ -1,0 +1,19 @@
+extends layout
+
+block content
+  head
+    title View 1
+
+  body
+    h1 View 1
+    p Welcome to View 1
+    a(href='/view2') Go to View 2
+    form(action='/submit' method='post')
+      input(type='text' name='formData' placeholder='Enter data')
+      input(type='submit' value='Submit')
+      
+    h1 View 1
+    img(src='/image.jpg', alt='Local Image')
+    a(href='/download', download='image.jpg') Download Image
+
+

@@ -1,10 +1,19 @@
 const express = require('express');
+const morgan = require('morgan');
 const app = express();
 const port = 3000;
 
-// Setting the view engine to Pug
+// Middleware for logging using morgan
+app.use(morgan('dev'));
+
+app.use(express.json()); 
+app.use(express.urlencoded({ extended: true })); 
+
+
+// Set the view engine to Pug
 app.set('view engine', 'pug');
 app.set('views', __dirname + '/views');
+
 
 // Routing to the first view
 app.get('/', (req, res) => {
